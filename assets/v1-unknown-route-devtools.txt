@@ -1,0 +1,15 @@
+Журнал DevTools (Console + Network): открытие несуществующего адреса
+URL: https://products-store-ru.hexlet.app/no-such-page
+Браузер: Google Chrome 156.0.8078.47 (64 бит), ОС: Windows 11 Pro 10.0.22000
+Дата: 2026-10-26
+
++   49ms [network] GET https://products-store-ru.hexlet.app/no-such-page -> 301 (document, )
++   94ms [network] GET https://products-store.hexlet.app/no-such-page -> 200 (document, text/html)
++   98ms [navigation] https://products-store.hexlet.app/no-such-page
++  195ms [network] GET https://products-store.hexlet.app/assets/index-CWqyei10.css -> 200 (stylesheet, text/css)
++  443ms [network] GET https://products-store.hexlet.app/assets/index-Dk_u7iDH.js -> 200 (script, application/javascript)
++  480ms [navigation] https://products-store.hexlet.app/no-such-page
++  482ms [console.warn] No routes matched location "/no-such-page"   (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js)
++  484ms [network] GET data:image/svg+xml,%3c?xml%20version=%27…(встроенное изображение) -> 200 (image, image/svg+xml)
++  484ms [network] GET data:image/svg+xml,%3c?xml%20version=%27…(встроенное изображение) -> 200 (image, image/svg+xml)
++  525ms [network] GET https://products-store.hexlet.app/english -> 200 (image, text/html)

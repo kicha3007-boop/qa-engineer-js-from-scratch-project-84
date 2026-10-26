@@ -1,0 +1,8 @@
+Замеры DevTools (окно 1366x900), https://products-store-ru.hexlet.app/, первая страница каталога
+Essence Mascara Lash Princess: кнопка ниже границы карточки на 10px
+Eyeshadow Palette with Mirror: кнопка ниже границы карточки на 34px
+Powder Canister: кнопка ниже границы карточки на 15px
+Annibale Colombo Bed: кнопка ниже границы карточки на 23px
+Annibale Colombo Sofa: кнопка ниже границы карточки на 23px
+Knoll Saarinen Executive Conference Chair: кнопка ниже границы карточки на 2px
+Wooden Bathroom Sink With Mirror: кнопка ниже границы карточки на 18px

@@ -1,0 +1,45 @@
+Журнал DevTools (Console + Network): поиск без результатов
+URL: https://products-store-v2-ru.hexlet.app/
+Браузер: Google Chrome 156.0.8078.47 (64 бит), ОС: Windows 11 Pro 10.0.22000
+Дата: 2026-10-26
+
++   46ms [network] GET https://products-store-v2-ru.hexlet.app/ -> 301 (document, )
++   91ms [network] GET https://products-store-v2.hexlet.app/ -> 200 (document, text/html)
++   94ms [navigation] https://products-store-v2.hexlet.app/
++  140ms [network] GET https://products-store-v2.hexlet.app/assets/index-BgyHCLwh.css -> 200 (stylesheet, text/css)
++  346ms [network] GET https://products-store-v2.hexlet.app/assets/index-CVwywYTQ.js -> 200 (script, application/javascript)
++  378ms [navigation] https://products-store-v2.hexlet.app/
++  432ms [network] GET https://products-store-v2.hexlet.app/api/products?skip=0 -> 200 (fetch, application/json)
++  472ms [network] GET data:image/svg+xml,%3csvg xmlns='http://…(встроенное изображение) -> 200 (image, image/svg+xml)
++  518ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/cooking-oil/thumbnail.webp -> 200 (image, image/webp)
++  518ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/dog-food/thumbnail.webp -> 200 (image, image/webp)
++  521ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp -> 200 (image, image/webp)
++  521ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/wooden-bathroom-sink-with-mirror/thumbnail.webp -> 200 (image, image/webp)
++  521ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/apple/thumbnail.webp -> 200 (image, image/webp)
++  521ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/beef-steak/thumbnail.webp -> 200 (image, image/webp)
++  521ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/cat-food/thumbnail.webp -> 200 (image, image/webp)
++  521ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/chicken-meat/thumbnail.webp -> 200 (image, image/webp)
++  521ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/cucumber/thumbnail.webp -> 200 (image, image/webp)
++  527ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp -> 200 (image, image/webp)
++  527ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/dior-j'adore/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/annibale-colombo-bed/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/annibale-colombo-sofa/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/red-lipstick/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/bedside-table-african-cherry/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp -> 200 (image, image/webp)
++  528ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/powder-canister/thumbnail.webp -> 200 (image, image/webp)
++  531ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/red-nail-polish/thumbnail.webp -> 200 (image, image/webp)
++  531ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp -> 200 (image, image/webp)
++  531ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp -> 200 (image, image/webp)
++  533ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/fish-steak/thumbnail.webp -> 200 (image, image/webp)
++  533ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/eggs/thumbnail.webp -> 200 (image, image/webp)
++  535ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/green-bell-pepper/thumbnail.webp -> 200 (image, image/webp)
++  535ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/green-chili-pepper/thumbnail.webp -> 200 (image, image/webp)
++  535ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/honey-jar/thumbnail.webp -> 200 (image, image/webp)
++  535ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/ice-cream/thumbnail.webp -> 200 (image, image/webp)
++  535ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/juice/thumbnail.webp -> 200 (image, image/webp)
++  536ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/kiwi/thumbnail.webp -> 200 (image, image/webp)
++ 2097ms [шаг] Ввести в поле «Search» строку qwertyzz
++ 3495ms [шаг] Карточек на странице: 30; текст «Nothing found!» на странице: false

@@ -1,0 +1,165 @@
+---
+test-cases:
+  - summary: |
+      Отображение рейтинга товара в карточке каталога
+    status: fail
+
+  - summary: |
+      Успешный переход до последней страницы каталога кнопкой «Следующая»
+    status: fail
+
+  - summary: |
+      Успешный поиск товара, который находится на другой странице каталога
+    status: fail
+
+  - summary: |
+      Вывод сообщения «Nothing found!» при поиске без результатов
+    status: fail
+
+  - summary: |
+      Успешный сброс фильтра по категории
+    status: pass
+
+  - summary: |
+      Товар с ценой, равной границе диапазона, попадает в результат фильтра по цене
+    status: fail
+
+  - summary: |
+      Отображение всех изображений товара на странице товара
+    status: fail
+
+  - summary: |
+      Переход в каталог категории по ссылке категории на странице товара
+    status: pass
+
+  - summary: |
+      Успешное оформление заказа
+    status: fail
+
+  - summary: |
+      Переход в каталог по ссылке «Магазин» без перезагрузки страницы
+    status: fail
+
+  - summary: |
+      Фильтры каталога пригодны для использования на экране шириной 375px
+    status: pass
+
+  - summary: |
+      Отсутствие горизонтальной прокрутки на странице корзины на экране шириной 375px
+    status: pass
+
+  - summary: |
+      Надпись кнопки «Оформить заказ» видна полностью на экране шириной 375px
+    status: fail
+
+  - summary: |
+      Перевод всех надписей страницы товара на русский язык
+    status: fail
+
+  - summary: |
+      Загрузка всех ресурсов главной страницы без ошибок
+    status: pass
+
+  - summary: |
+      Вывод сообщения об ошибке при открытии несуществующего товара
+    status: fail
+
+  - summary: |
+      Вывод страницы «Страница не найдена» для несуществующего адреса
+    status: fail
+
+  - summary: |
+      Невозможность добавить в корзину товар с нулевым остатком
+    status: fail
+
+  - summary: |
+      Очищенная корзина остаётся пустой после перезагрузки страницы
+    status: fail
+
+  - summary: |
+      Закрытие окна подтверждения заказа кнопкой-крестиком
+    status: fail
+
+  - summary: |
+      Отображение всех товаров страницы при снятом флажке «В наличии»
+    status: fail
+
+  - summary: |
+      Вывод сообщения «Nothing found!», когда минимальная цена больше максимальной
+    status: fail
+
+  - summary: |
+      Подсказка поля «До» в фильтре цены показывает максимальную цену товаров
+    status: fail
+
+  - summary: |
+      Отсутствие пустых пунктов в списке производителей
+    status: fail
+
+  - summary: |
+      Сохранение выбранного языка после перезагрузки страницы
+    status: fail
+
+  - summary: |
+      Отсутствие опечаток в заголовке окна подтверждения заказа на русском языке
+    status: fail
+
+  - summary: |
+      Кнопки «В корзину» находятся внутри карточек товаров на экране 1366px
+    status: fail
+
+  - summary: |
+      Отображение в корзине количества товара без остатка на складе
+    status: fail
+
+bugreports:
+  - summary: |
+      Кнопка «Next» пропадает на 4-й странице каталога, страницы 5–7 недоступны
+    environment: |
+      Google Chrome 156.0.8078.47 (64 бит)
+      ОС Windows 11 Pro 10.0.22000
+      Окно браузера 1366x900
+      Приложение: версия 2 (в подвале «version 2»), https://products-store-v2-ru.hexlet.app/ (перенаправляет на https://products-store-v2.hexlet.app/)
+    steps-to-reproduce: |
+      1. Открыть https://products-store-v2-ru.hexlet.app/
+      2. Трижды нажать «Next»
+    expected-result: |
+      На 4-й странице есть кнопка «Next», ею можно дойти до 7-й страницы (194 товара)
+    actual-result: |
+      На 4-й странице выводится только кнопка «Previous»: на ней 29 товаров (товар с нулевым остатком скрыт фильтром «In Stock»),. Товары 5–7 страниц открыть из каталога нельзя.
+      Скриншот: assets/v2-catalog-page4-no-next.png
+
+  - summary: |
+      При пустом результате поиска или фильтра выводится весь каталог вместо «Nothing found!»
+    environment: |
+      Google Chrome 156.0.8078.47 (64 бит)
+      ОС Windows 11 Pro 10.0.22000
+      Окно браузера 1366x900
+      Приложение: версия 2 (в подвале «version 2»), https://products-store-v2-ru.hexlet.app/ (перенаправляет на https://products-store-v2.hexlet.app/)
+    steps-to-reproduce: |
+      1. Открыть https://products-store-v2-ru.hexlet.app/
+      2. Ввести «qwertyzz» в поле «Search»
+    expected-result: |
+      Карточки не выводятся, выведено сообщение «Nothing found!» (как в версии 1)
+    actual-result: |
+      Выводятся все 30 товаров страницы, сообщения нет, кнопки пагинации пропадают. Так же при «From» = 100 и «To» = 10 выводятся все 30 товаров. Пользователь не понимает, что ничего не найдено.
+      Скриншот: assets/v2-search-no-results.png
+      Лог DevTools: assets/v2-search-no-results-devtools.txt
+
+  - summary: |
+      Переход по ссылке «Store» в шапке перезагружает страницу целиком
+    environment: |
+      Google Chrome 156.0.8078.47 (64 бит)
+      ОС Windows 11 Pro 10.0.22000
+      Окно браузера 1366x900
+      Приложение: версия 2 (в подвале «version 2»), https://products-store-v2-ru.hexlet.app/ (перенаправляет на https://products-store-v2.hexlet.app/)
+    steps-to-reproduce: |
+      1. Открыть https://products-store-v2-ru.hexlet.app/cart
+      2. Открыть DevTools, вкладку Network
+      3. Нажать «Store» в шапке
+    expected-result: |
+      Каталог открывается без перезагрузки (SPA): выполняется только запрос /api/products, как в версии 1
+    actual-result: |
+      Браузер заново запрашивает документ https://products-store-v2.hexlet.app/, index-BgyHCLwh.css и index-CVwywYTQ.js — страница перезагружается полностью.
+      Лог DevTools v2: assets/v2-store-link-reload-devtools.txt
+      Для сравнения v1: assets/v1-store-link-spa-devtools.txt

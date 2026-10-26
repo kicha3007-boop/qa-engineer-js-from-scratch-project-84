@@ -1,0 +1,50 @@
+Журнал DevTools (Console + Network): переход по ссылке «Store» (страница загружается заново: повторный запрос документа и всех скриптов)
+URL: https://products-store-v2-ru.hexlet.app/cart
+Браузер: Google Chrome 156.0.8078.47 (64 бит), ОС: Windows 11 Pro 10.0.22000
+Дата: 2026-10-26
+
++   47ms [network] GET https://products-store-v2-ru.hexlet.app/cart -> 301 (document, )
++  100ms [network] GET https://products-store-v2.hexlet.app/cart -> 200 (document, text/html)
++  103ms [navigation] https://products-store-v2.hexlet.app/cart
++  163ms [network] GET https://products-store-v2.hexlet.app/assets/index-BgyHCLwh.css -> 200 (stylesheet, text/css)
++  370ms [network] GET https://products-store-v2.hexlet.app/assets/index-CVwywYTQ.js -> 200 (script, application/javascript)
++  400ms [navigation] https://products-store-v2.hexlet.app/cart
++  410ms [network] GET data:image/svg+xml,%3csvg xmlns='http://…(встроенное изображение) -> 200 (image, image/svg+xml)
++ 1997ms [шаг] Нажать ссылку «Store» в шапке
++ 2050ms [network] GET https://products-store-v2.hexlet.app/ -> 200 (document, text/html)
++ 2051ms [navigation] https://products-store-v2.hexlet.app/
++ 2099ms [network] GET https://products-store-v2.hexlet.app/assets/index-BgyHCLwh.css -> 200 (stylesheet, text/css)
++ 2304ms [network] GET https://products-store-v2.hexlet.app/assets/index-CVwywYTQ.js -> 200 (script, application/javascript)
++ 2308ms [navigation] https://products-store-v2.hexlet.app/
++ 2359ms [network] GET https://products-store-v2.hexlet.app/api/products?skip=0 -> 200 (fetch, application/json)
++ 2395ms [network] GET data:image/svg+xml,%3csvg xmlns='http://…(встроенное изображение) -> 200 (image, image/svg+xml)
++ 2428ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp -> 200 (image, image/webp)
++ 2429ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/red-lipstick/thumbnail.webp -> 200 (image, image/webp)
++ 2429ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp -> 200 (image, image/webp)
++ 2433ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/powder-canister/thumbnail.webp -> 200 (image, image/webp)
++ 2437ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp -> 200 (image, image/webp)
++ 2438ms [network] GET https://products-store-v2.hexlet.app/product-images/beauty/red-nail-polish/thumbnail.webp -> 200 (image, image/webp)
++ 2449ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp -> 200 (image, image/webp)
++ 2449ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/green-bell-pepper/thumbnail.webp -> 200 (image, image/webp)
++ 2449ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/green-chili-pepper/thumbnail.webp -> 200 (image, image/webp)
++ 2449ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/kiwi/thumbnail.webp -> 200 (image, image/webp)
++ 2449ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/fish-steak/thumbnail.webp -> 200 (image, image/webp)
++ 2452ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/eggs/thumbnail.webp -> 200 (image, image/webp)
++ 2454ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/dog-food/thumbnail.webp -> 200 (image, image/webp)
++ 2461ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/chicken-meat/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/cooking-oil/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/cucumber/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/honey-jar/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/juice/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/dior-j'adore/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/annibale-colombo-bed/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/annibale-colombo-sofa/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/bedside-table-african-cherry/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/furniture/wooden-bathroom-sink-with-mirror/thumbnail.webp -> 200 (image, image/webp)
++ 2462ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/apple/thumbnail.webp -> 200 (image, image/webp)
++ 2463ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/beef-steak/thumbnail.webp -> 200 (image, image/webp)
++ 2463ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/cat-food/thumbnail.webp -> 200 (image, image/webp)
++ 2463ms [network] GET https://products-store-v2.hexlet.app/product-images/groceries/ice-cream/thumbnail.webp -> 200 (image, image/webp)

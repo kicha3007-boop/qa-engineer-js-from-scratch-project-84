@@ -1,0 +1,29 @@
+Журнал DevTools (Console + Network): открытие несуществующего товара
+URL: https://products-store-ru.hexlet.app/products/9999
+Браузер: Google Chrome 156.0.8078.47 (64 бит), ОС: Windows 11 Pro 10.0.22000
+Дата: 2026-10-26
+
++    0ms [шаг] Открыть https://products-store-ru.hexlet.app/products/9999
++   47ms [network] GET https://products-store-ru.hexlet.app/products/9999 -> 301 (document, )
++   97ms [network] GET https://products-store.hexlet.app/products/9999 -> 200 (document, text/html)
++  100ms [navigation] https://products-store.hexlet.app/products/9999
++  161ms [network] GET https://products-store.hexlet.app/assets/index-CWqyei10.css -> 200 (stylesheet, text/css)
++  448ms [network] GET https://products-store.hexlet.app/assets/index-Dk_u7iDH.js -> 200 (script, application/javascript)
++  490ms [navigation] https://products-store.hexlet.app/products/9999
++  495ms [network] GET data:image/svg+xml,%3c?xml%20version=%27…(встроенное изображение) -> 200 (image, image/svg+xml)
++  495ms [network] GET data:image/svg+xml,%3c?xml%20version=%27…(встроенное изображение) -> 200 (image, image/svg+xml)
++  532ms [network] GET https://products-store.hexlet.app/products/english -> 200 (image, text/html)
++  547ms [console.error] Failed to load resource: the server responded with a status of 404 ()  (https://products-store.hexlet.app/api/products/9999)
++  554ms [uncaught] TypeError: Cannot read properties of undefined (reading 'map')
+    at Hs (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:11:103443)
+    at Do (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:47537)
+    at vc (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:69967)
+    at Fc (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:80222)
+    at Mu (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:115569)
+    at ku (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:114652)
+    at Ou (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:114491)
+    at gu (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:111364)
+    at ld (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:122975)
+    at id (https://products-store.hexlet.app/assets/index-Dk_u7iDH.js:8:121539)
++  554ms [network] GET https://products-store.hexlet.app/api/products/9999 -> 404 (fetch, application/json)  body: {"message":"Product with id '9999' not found"}
++ 3616ms [шаг] Длина body.innerHTML после загрузки: 0

@@ -1,0 +1,2 @@
+Замеры DevTools (Device Toolbar 375x812), https://products-store-ru.hexlet.app/
+Ширина колонки фильтров: 88px; правый край поля «Search»: 201px; ширина полей цены: 32px, 32px; верх первой карточки товара: 1293px

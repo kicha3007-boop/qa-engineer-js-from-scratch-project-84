@@ -1,0 +1,2 @@
+Замеры DevTools (Device Toolbar 375x812), https://products-store-ru.hexlet.app/cart
+document.documentElement.scrollWidth=407px, clientWidth=375px; кнопка «Checkout»: clientWidth=73px, scrollWidth=79px

@@ -1,0 +1,411 @@
+---
+- summary: |
+    В карточках каталога не выводится рейтинг товара
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Найти карточку «Essence Mascara Lash Princess»
+  expected-result: |
+    В карточке выведен рейтинг товара 2.56 (как на странице товара: «Rating: 2.56 ★»)
+  actual-result: |
+    В карточке выведены только цены 9.99$ и 8.94$ и число 99 без подписи (это остаток на складе); рейтинга нет ни в одной карточке каталога.
+    Скриншот: assets/v1-catalog-cards-1366.png
+
+- summary: |
+    Поиск находит товары только на открытой странице каталога
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Ввести «iphone» в поле «Search»
+  expected-result: |
+    Выведены 7 товаров каталога со словом iPhone в названии: «Apple iPhone Charger», «iPhone 12 Silicone Case with MagSafe Plum», «Selfie Lamp with iPhone», «iPhone 5s», «iPhone 6», «iPhone 13 Pro», «iPhone X»
+  actual-result: |
+    Выведено сообщение «Nothing found!»: поиск идёт только по 30 товарам 1-й страницы, товары с 4-й и 5-й страниц не находятся.
+    Скриншот: assets/v1-search-iphone.png
+
+- summary: |
+    Нельзя сбросить выбранную категорию в фильтре «Category»
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Нажать «Category»
+    3. Выбрать «fragrances»
+    4. Снова нажать «Category»
+  expected-result: |
+    В списке есть пункт сброса (все категории), после его выбора снова выводятся все 30 товаров страницы
+  actual-result: |
+    В списке только категории beauty, fragrances, furniture, groceries; пункта сброса нет. Вернуть все товары можно только перезагрузкой страницы.
+    Скриншот: assets/v1-category-menu.png
+
+- summary: |
+    Фильтр по цене не включает товары с ценой, равной границе диапазона
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. В поле «From» блока «Price» ввести 1.49
+    3. В поле «To» ввести 1.49
+  expected-result: |
+    Выведена карточка «Cucumber» (цена 1.49$)
+  actual-result: |
+    Выведено «Nothing found!». Так же при «To» = 1.99 не выводится «Apple» (1.99$): границы диапазона исключаются из результата.
+
+- summary: |
+    На странице товара не выводится последнее изображение товара
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/products/6 («Calvin Klein CK One»)
+    2. Просмотреть изображения товара
+  expected-result: |
+    Выведены обложка и все 3 изображения товара (1.webp, 2.webp, 3.webp — по данным ответа /api/products/6 во вкладке Network)
+  actual-result: |
+    Выведены обложка, 1.webp и 2.webp; изображение 3.webp не выводится. У товаров с одним изображением (например, /products/1) показывается только обложка.
+    Скриншот: assets/v1-product-6-images.png
+
+- summary: |
+    Ссылка категории на странице товара никуда не ведёт
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/products/1
+    2. Нажать ссылку «#beauty» над названием товара
+  expected-result: |
+    Открыт каталог, отфильтрованный по категории beauty
+  actual-result: |
+    Страница не меняется, к адресу добавляется «#» (https://products-store.hexlet.app/products/1#): у ссылки href="#".
+
+- summary: |
+    Оформление заказа завершается ошибкой 500, но пользователю показывается сообщение об успехе
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. В карточке «Essence Mascara Lash Princess» нажать «Add to cart»
+    3. Нажать «Cart» в шапке
+    4. Открыть DevTools, вкладки Console и Network
+    5. Нажать «Checkout»
+  expected-result: |
+    Запрос POST /api/orders выполнен успешно (2xx), выведено окно «Order placed successfully»; при ошибке сервера пользователю выводится сообщение о неудаче
+  actual-result: |
+    POST https://products-store.hexlet.app/api/orders возвращает 500 с телом {"message":"Failed to create order","statusCode":500}, в консоли ошибка «Failed to load resource: the server responded with a status of 500»; при этом выводится окно «Order placed successfully» — заказ не создан, а пользователь считает, что создан.
+    Скриншот: assets/v1-order-500-modal.png
+    Лог DevTools: assets/v1-order-500-devtools.txt
+
+- summary: |
+    На экране 375px колонка фильтров сжата до 88px, поля поиска и цены не помещаются
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Эмуляция устройства в DevTools (Device Toolbar), экран 375x812
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/ в режиме Device Toolbar 375x812
+    2. Просмотреть блок фильтров
+  expected-result: |
+    Фильтры занимают ширину экрана (или скрыты в отдельный блок), поля «Search» и «From - To» помещаются и читаются, карточки товаров видны без прокрутки всего списка фильтров
+  actual-result: |
+    Колонка фильтров шириной 88px: поле «Search» выходит за её границу (правый край 201px), поля цены шириной 32px (значения не читаются), названия производителей переносятся по словам; первая карточка товара начинается только на 1293px от верха страницы.
+    Скриншот: assets/v1-mobile-375-catalog-filters.png
+    Замеры DevTools: assets/v1-mobile-375-catalog-metrics.txt
+
+- summary: |
+    На экране 375px страница корзины шире экрана и прокручивается по горизонтали
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Эмуляция устройства в DevTools (Device Toolbar), экран 375x812
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/ в режиме Device Toolbar 375x812
+    2. В карточке «Essence Mascara Lash Princess» нажать «Add to cart»
+    3. Нажать «Cart» в шапке
+  expected-result: |
+    Содержимое корзины помещается в 375px, горизонтальной прокрутки нет
+  actual-result: |
+    Ширина документа 407px при ширине экрана 375px — появляется горизонтальная прокрутка; цена 8.94$ выходит за рамку строки товара, количество «1» наезжает на цену 9.99$.
+    Скриншот: assets/v1-mobile-375-cart.png
+    Замеры DevTools: assets/v1-mobile-375-cart-metrics.txt
+
+- summary: |
+    На экране 375px надпись кнопки «Checkout» обрезана
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Эмуляция устройства в DevTools (Device Toolbar), экран 375x812
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/ в режиме Device Toolbar 375x812
+    2. В карточке «Essence Mascara Lash Princess» нажать «Add to cart»
+    3. Нажать «Cart» в шапке
+    4. Просмотреть кнопку «Checkout»
+  expected-result: |
+    Надпись «Checkout» видна целиком
+  actual-result: |
+    Видно только «Checkou»: ширина кнопки задана как 20% (73px), а текст занимает 79px (clientWidth 73px, scrollWidth 79px).
+    Скриншот: assets/v1-mobile-375-cart.png
+    Замеры DevTools: assets/v1-mobile-375-cart-metrics.txt
+
+- summary: |
+    На русском языке на странице товара не переведены «Description» и «% Off»
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/products/1
+    2. Нажать «Language» и выбрать «Russian»
+  expected-result: |
+    Заголовок блока описания — «Описание», размер скидки подписан по-русски
+  actual-result: |
+    Остальные надписи переведены («Рейтинг», «В корзину»), но заголовок «Description» и подпись скидки «10.48% Off» остались на английском.
+    Скриншот: assets/v1-ru-product-untranslated.png
+
+- summary: |
+    Не загружается изображение флага у пункта «English» в меню «Language»
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Открыть DevTools, вкладку Network
+    3. Нажать «Language» в шапке
+  expected-result: |
+    У пунктов English, Russian, Spanish выводятся флаги, все изображения загружаются с типом image/*
+  actual-result: |
+    У пункта «English» вместо флага битое изображение с текстом alt «English». В Network запрос https://products-store.hexlet.app/english возвращает 200 с content-type text/html (страница приложения вместо картинки), naturalWidth изображения 0. На страницах товаров запрашивается /products/english с тем же результатом.
+    Скриншот: assets/v1-lang-menu-broken-flag.png
+    Лог DevTools: assets/v1-lang-flag-devtools.txt
+
+- summary: |
+    При открытии несуществующего товара страница становится полностью пустой, в консоли ошибка TypeError
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть DevTools, вкладку Console
+    2. Открыть https://products-store-ru.hexlet.app/products/9999
+  expected-result: |
+    Выведены шапка сайта и сообщение «Товар не найден»; необработанных ошибок в консоли нет
+  actual-result: |
+    Страница полностью белая — пропадают и шапка, и подвал (body пустой). API отвечает 404 {"message":"Product with id '9999' not found"}, затем в консоли «TypeError: Cannot read properties of undefined (reading 'map')».
+    Скриншот: assets/v1-product-9999-blank.png
+    Лог DevTools: assets/v1-product-9999-devtools.txt
+
+- summary: |
+    Для несуществующего адреса не выводится страница «Страница не найдена»
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/no-such-page
+  expected-result: |
+    Выведено сообщение «Страница не найдена» и ссылка в каталог
+  actual-result: |
+    Выводятся только шапка и подвал, основная часть страницы пустая; в консоли предупреждение «No routes matched location "/no-such-page"».
+    Скриншот: assets/v1-unknown-route.png
+    Лог DevTools: assets/v1-unknown-route-devtools.txt
+
+- summary: |
+    Товар с нулевым остатком можно добавить в корзину со страницы товара
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/products/117 («Sportbike Motorcycle», остаток 0)
+    2. Нажать «Add to cart»
+    3. Нажать «Cart» в шапке
+  expected-result: |
+    Кнопка «Add to cart» недоступна или отсутствует (как в карточке каталога), корзина пуста
+  actual-result: |
+    Товар добавлен: счётчик у «Cart» стал 1, в корзине «Sportbike Motorcycle», «0 qty.», количество 1, «Total: 6631.49 $», доступна кнопка «Checkout».
+    Скриншот: assets/v1-out-of-stock-in-cart.png
+
+- summary: |
+    После «Clear cart» и перезагрузки страницы товары возвращаются в корзину
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/products/6
+    2. Нажать «Add to cart»
+    3. Нажать «Cart» в шапке
+    4. Нажать «Clear cart»
+    5. Обновить страницу (F5)
+  expected-result: |
+    Корзина остаётся пустой
+  actual-result: |
+    После шага 4 корзина пуста, но после перезагрузки в ней снова «Calvin Klein CK One» и счётчик 1. В DevTools > Application > Session Storage после очистки ключ cart по-прежнему содержит товар.
+    Скриншот: assets/v1-cart-cleared-after-reload.png
+
+- summary: |
+    Окно подтверждения заказа не закрывается крестиком
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. В карточке «Essence Mascara Lash Princess» нажать «Add to cart»
+    3. Нажать «Cart» в шапке
+    4. Нажать «Checkout»
+    5. Нажать крестик в правом верхнем углу окна
+  expected-result: |
+    Окно закрывается
+  actual-result: |
+    Окно остаётся открытым; закрыть его можно только кнопкой «Close».
+    Скриншот окна: assets/v1-order-500-modal.png
+
+- summary: |
+    При снятом флажке «In Stock» в каталоге остаются только товары с нулевым остатком
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Трижды нажать «Next» (открыть 4-ю страницу)
+    3. Снять флажок «In Stock»
+  expected-result: |
+    Выведены все 30 товаров 4-й страницы, включая «Sportbike Motorcycle» с остатком 0
+  actual-result: |
+    Выведен только «Sportbike Motorcycle»; на 1-й странице (где все товары в наличии) при снятом флажке выводится «Nothing found!».
+    Скриншот: assets/v1-stock-unchecked-page4.png
+
+- summary: |
+    Подсказка в поле «To» фильтра цены показывает сумму цен всех товаров страницы (6577.499999999995)
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Просмотреть пустое поле «To» в блоке «Price»
+  expected-result: |
+    Подсказка показывает максимальную цену товаров страницы в формате цены — 2499.99
+  actual-result: |
+    В подсказке 6577.499999999995 (сумма цен 30 товаров страницы с ошибкой округления); в поле видно только «6577.».
+    Скриншот: assets/v1-price-filter-placeholder.png
+
+- summary: |
+    В списке производителей есть пустой флажок без названия
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Просмотреть список в блоке «Brand»
+  expected-result: |
+    У каждого флажка есть название производителя
+  actual-result: |
+    После «Bath Trends» выводится флажок без подписи (id="undefined-check"); если его отметить, выводятся 15 товаров без производителя (Apple, Beef Steak, Cat Food и др.).
+    Скриншот: assets/v1-price-filter-placeholder.png (пустой флажок над блоком «In Stock»)
+
+- summary: |
+    Выбранный язык сбрасывается на английский после перезагрузки страницы
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Нажать «Language» и выбрать «Russian»
+    3. Обновить страницу (F5)
+  expected-result: |
+    Интерфейс остаётся на русском языке
+  actual-result: |
+    После перезагрузки интерфейс снова на английском («Store», «Cart», «Language»).
+
+- summary: |
+    Опечатка в заголовке окна заказа: «Заказ успешно формлен»
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Нажать «Language» и выбрать «Russian»
+    3. В карточке «Essence Mascara Lash Princess» нажать «В корзину»
+    4. Нажать «Корзина» в шапке
+    5. Нажать «Оформить заказ»
+  expected-result: |
+    Заголовок окна — «Заказ успешно оформлен»
+  actual-result: |
+    Заголовок окна — «Заказ успешно формлен».
+    Скриншот: assets/v1-ru-order-modal-typo.png
+
+- summary: |
+    Кнопка «Add to cart» выходит за нижнюю границу карточки товара
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. Просмотреть нижнюю часть карточек «Essence Mascara Lash Princess», «Eyeshadow Palette with Mirror», «Powder Canister»
+  expected-result: |
+    Цены и кнопка «Add to cart» находятся внутри рамки карточки
+  actual-result: |
+    Кнопка выходит за нижнюю границу карточки (у «Eyeshadow Palette with Mirror» на 34px), цены слипаются («19.99$16.35$34»); на 1-й странице так 7 карточек.
+    Скриншот: assets/v1-catalog-cards-1366.png
+    Замеры DevTools: assets/v1-catalog-cards-1366-metrics.txt
+
+- summary: |
+    В строке товара в корзине выводится остаток на складе с подписью «qty.»
+  environment: |
+    Google Chrome 156.0.8078.47 (64 бит)
+    ОС Windows 11 Pro 10.0.22000
+    Окно браузера 1366x900
+    Приложение: версия 1 (в подвале «version 1»), https://products-store-ru.hexlet.app/ (перенаправляет на https://products-store.hexlet.app/)
+  steps-to-reproduce: |
+    1. Открыть https://products-store-ru.hexlet.app/
+    2. В карточке «Essence Mascara Lash Princess» дважды нажать «Add to cart»
+    3. Нажать «Cart» в шапке
+  expected-result: |
+    В строке выведено количество в корзине — 2, с подписью количества
+  actual-result: |
+    В строке «Essence Mascara Lash Princess 99 qty. 2 9.99$ Delete 17.89$»: рядом с названием «99 qty.» (остаток на складе), а количество в корзине — отдельная цифра 2 без подписи; пользователь видит «99 qty.» как заказанное количество.
+    Скриншот: assets/v1-cart-stock-qty.png

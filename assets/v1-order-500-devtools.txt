@@ -1,0 +1,54 @@
+Журнал DevTools (Console + Network): оформление заказа
+URL: https://products-store-ru.hexlet.app/cart
+Браузер: Google Chrome 156.0.8078.47 (64 бит), ОС: Windows 11 Pro 10.0.22000
+Дата: 2026-10-26
+
++  190ms [network] GET https://products-store-ru.hexlet.app/ -> 301 (document, )
++  324ms [network] GET https://products-store.hexlet.app/ -> 200 (document, text/html)
++  327ms [navigation] https://products-store.hexlet.app/
++  495ms [network] GET https://products-store.hexlet.app/assets/index-CWqyei10.css -> 200 (stylesheet, text/css)
++  601ms [network] GET https://products-store.hexlet.app/assets/index-Dk_u7iDH.js -> 200 (script, application/javascript)
++  638ms [navigation] https://products-store.hexlet.app/
++  639ms [network] GET data:image/svg+xml,%3c?xml%20version=%27…(встроенное изображение) -> 200 (image, image/svg+xml)
++  640ms [network] GET data:image/svg+xml,%3c?xml%20version=%27…(встроенное изображение) -> 200 (image, image/svg+xml)
++  651ms [network] GET data:image/svg+xml,%3csvg xmlns='http://…(встроенное изображение) -> 200 (image, image/svg+xml)
++  685ms [network] GET https://products-store.hexlet.app/english -> 200 (image, text/html)
++  700ms [network] GET https://products-store.hexlet.app/api/products?skip=0 -> 200 (fetch, application/json)
++  704ms [network] GET https://products-store.hexlet.app/favicon.ico -> 200 (other, image/vnd.microsoft.icon)
++  772ms [network] GET https://products-store.hexlet.app/product-images/beauty/red-lipstick/thumbnail.webp -> 200 (image, image/webp)
++  772ms [network] GET https://products-store.hexlet.app/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp -> 200 (image, image/webp)
++  772ms [network] GET https://products-store.hexlet.app/product-images/beauty/powder-canister/thumbnail.webp -> 200 (image, image/webp)
++  773ms [network] GET https://products-store.hexlet.app/product-images/fragrances/dior-j'adore/thumbnail.webp -> 200 (image, image/webp)
++  773ms [network] GET https://products-store.hexlet.app/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp -> 200 (image, image/webp)
++  773ms [network] GET https://products-store.hexlet.app/product-images/beauty/red-nail-polish/thumbnail.webp -> 200 (image, image/webp)
++  773ms [network] GET https://products-store.hexlet.app/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp -> 200 (image, image/webp)
++  773ms [network] GET https://products-store.hexlet.app/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp -> 200 (image, image/webp)
++  780ms [network] GET https://products-store.hexlet.app/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp -> 200 (image, image/webp)
++  781ms [network] GET https://products-store.hexlet.app/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp -> 200 (image, image/webp)
++  781ms [network] GET https://products-store.hexlet.app/product-images/furniture/wooden-bathroom-sink-with-mirror/thumbnail.webp -> 200 (image, image/webp)
++  788ms [network] GET https://products-store.hexlet.app/product-images/furniture/annibale-colombo-bed/thumbnail.webp -> 200 (image, image/webp)
++  788ms [network] GET https://products-store.hexlet.app/product-images/furniture/annibale-colombo-sofa/thumbnail.webp -> 200 (image, image/webp)
++  789ms [network] GET https://products-store.hexlet.app/product-images/groceries/apple/thumbnail.webp -> 200 (image, image/webp)
++  789ms [network] GET https://products-store.hexlet.app/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp -> 200 (image, image/webp)
++  789ms [network] GET https://products-store.hexlet.app/product-images/groceries/beef-steak/thumbnail.webp -> 200 (image, image/webp)
++  789ms [network] GET https://products-store.hexlet.app/product-images/furniture/bedside-table-african-cherry/thumbnail.webp -> 200 (image, image/webp)
++  791ms [network] GET https://products-store.hexlet.app/product-images/groceries/cat-food/thumbnail.webp -> 200 (image, image/webp)
++  793ms [network] GET https://products-store.hexlet.app/product-images/groceries/chicken-meat/thumbnail.webp -> 200 (image, image/webp)
++  793ms [network] GET https://products-store.hexlet.app/product-images/groceries/cucumber/thumbnail.webp -> 200 (image, image/webp)
++  793ms [network] GET https://products-store.hexlet.app/product-images/groceries/eggs/thumbnail.webp -> 200 (image, image/webp)
++  793ms [network] GET https://products-store.hexlet.app/product-images/groceries/dog-food/thumbnail.webp -> 200 (image, image/webp)
++  793ms [network] GET https://products-store.hexlet.app/product-images/groceries/cooking-oil/thumbnail.webp -> 200 (image, image/webp)
++  794ms [network] GET https://products-store.hexlet.app/product-images/groceries/ice-cream/thumbnail.webp -> 200 (image, image/webp)
++  795ms [network] GET https://products-store.hexlet.app/product-images/groceries/honey-jar/thumbnail.webp -> 200 (image, image/webp)
++  795ms [network] GET https://products-store.hexlet.app/product-images/groceries/green-chili-pepper/thumbnail.webp -> 200 (image, image/webp)
++  796ms [network] GET https://products-store.hexlet.app/product-images/groceries/fish-steak/thumbnail.webp -> 200 (image, image/webp)
++  796ms [network] GET https://products-store.hexlet.app/product-images/groceries/green-bell-pepper/thumbnail.webp -> 200 (image, image/webp)
++  796ms [network] GET https://products-store.hexlet.app/product-images/groceries/juice/thumbnail.webp -> 200 (image, image/webp)
++  796ms [network] GET https://products-store.hexlet.app/product-images/groceries/kiwi/thumbnail.webp -> 200 (image, image/webp)
++ 2155ms [шаг] Добавить в корзину «Essence Mascara Lash Princess»
++ 2864ms [шаг] Перейти в «Cart»
++ 2871ms [navigation] https://products-store.hexlet.app/cart
++ 2878ms [network] GET data:image/svg+xml,%3csvg xmlns='http://…(встроенное изображение) -> 200 (image, image/svg+xml)
++ 4075ms [шаг] Нажать «Checkout»
++ 4123ms [console.error] Failed to load resource: the server responded with a status of 500 ()  (https://products-store.hexlet.app/api/orders)
++ 4124ms [network] POST https://products-store.hexlet.app/api/orders -> 500 (fetch, application/json)  request: {"products":[{"id":1,"quantity":1}],"total":8.943048000000001}  body: {"message":"Failed to create order","statusCode":500}
